@@ -1,0 +1,32 @@
+template(name="emailForm")
+	form#sky-form3.sky-form.contact-style( method='post')
+		fieldset
+			label Name
+			.row
+				.col-md-7.margin-bottom-20.col-md-offset-0
+					div
+						input#name.form-control(type='text', name='name' placeholder="Name")
+			label 
+				| Telephone
+				i (optional)
+			.row
+				.col-md-7.margin-bottom-20.col-md-offset-0
+					div
+						input#phone.form-control(type='tel', name='phone' placeholder="Phone Number")
+			label
+				| Email 
+				span.color-red *
+			.row
+				.col-md-7.margin-bottom-20.col-md-offset-0
+					div
+						input#email.form-control(type='email' placeholder="Enter a valid email address" name='email' required)
+			label Message
+			.row
+				.col-md-11.margin-bottom-20.col-md-offset-0
+					div
+						textarea#message.form-control(rows='8', name='message' required)
+			p
+				button.btn-u.btn-brd.btn-brd-hover.btn-u-dark(type='submit') Send Message
+		.message
+			i.rounded-x.fa.fa-check
+			p Your message was successfully sent!

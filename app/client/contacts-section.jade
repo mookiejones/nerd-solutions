@@ -1,0 +1,44 @@
+template(name="contactsSection")
+	section#contact.contacts-section
+		.container.content-lg
+			.title-v1
+				h2 Contact Us
+				p
+					| Contact us for more information.
+					br
+					|                 Let us know how we can help provide your solutions.
+			.row.contacts-in
+				.col-md-6.md-margin-bottom-40
+					ul.list-unstyled
+						li
+							i.fa.fa-home
+							|  24435 Andover Dearborn Heights Michigan 48125 US
+						li
+							i.fa.fa-phone
+							|  1 (313) 790 9851
+						li
+							i.fa.fa-envelope
+							a(href='info@nerd.solutions') info@nerd.solutions
+						li
+							i.fa.fa-globe
+							a(href='http://nerd.solutions') http://nerd.solutions
+				.col-md-6
+					+emailForm
+		.copyright-section
+			p
+				| 2015 © All Rights Reserved. #{companyName} Theme by 
+				a(target='_blank', href='https://twitter.com/htmlstream') Htmlstream
+			ul.social-icons
+				li
+					a.social_facebook.rounded-x(href='#', data-original-title='Facebook')
+				li
+					a.social_twitter.rounded-x(href='#', data-original-title='Twitter')
+				li
+					a.social_googleplus.rounded-x(href='#', data-original-title='Goole Plus')
+				li
+					a.social_pintrest.rounded-x(href='#', data-original-title='Pinterest')
+				li
+					a.social_linkedin.rounded-x(href='#', data-original-title='Linkedin')
+			span.page-scroll
+				a(href='#intro')
+					i.fa.fa-angle-double-up.back-to-top

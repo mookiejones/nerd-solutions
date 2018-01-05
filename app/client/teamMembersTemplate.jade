@@ -1,0 +1,21 @@
+template(name="teamMembersTemplate")
+	each teamMembers
+		+teamMember mdImage=image name=name title=title description=description twitter=twitter facebook=facebook googleplus=googleplus	
+
+template(name="teamMember")
+	li.col-sm-3.col-xs-6.md-margin-bottom-30
+		.team-img
+			img.img-responsive(src="images/team/#{mdImage}.jpg", alt='')
+			ul
+				li
+					a(href="##{twitter}")
+						i.icon-custom.icon-sm.rounded-x.fa.fa-twitter
+				li
+					a(href="##{facebook}")
+						i.icon-custom.icon-sm.rounded-x.fa.fa-facebook
+				li
+					a(href="##{googleplus}")
+						i.icon-custom.icon-sm.rounded-x.fa.fa-google-plus
+		h3 #{name}
+		h4 / #{title}
+		p #{description}

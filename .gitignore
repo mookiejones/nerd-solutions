@@ -1,3 +1,7 @@
 .meteor/local
 .meteor/meteorite
 web/server/secrets.coffee
+.iron/
+app/.meteor/
+app/.vscode/
+app/node_modules/

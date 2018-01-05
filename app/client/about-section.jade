@@ -1,0 +1,152 @@
+template(name='aboutSection')
+	section#portfolio.about-section
+		.container.content-lg
+			.title-v1
+				h2 Our Portfolio
+				+missionStatement
+			.cube-portfolio
+				#filters-container.cbp-l-filters-button
+					.cbp-filter-item-active.cbp-filter-item(data-filter='*')  All 
+					.cbp-filter-item(data-filter='.print')  Print 
+					.cbp-filter-item(data-filter='.web-design')  Web Design 
+					.cbp-filter-item(data-filter='.motion')  Motion 
+				// /end Filters Container
+				#grid-container.cbp-l-grid-gallery
+					.cbp-item.print.motion
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project1.html', data-title='World Clock Widget<br>by Paul Flavius Nechita')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/1.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title World Clock Widget
+										.cbp-l-caption-desc by Paul Flavius Nechita
+					.cbp-item.web-design
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project2.html', data-title='Bolt UI<br>by Tiberiu Neamu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/2.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title Bolt UI
+										.cbp-l-caption-desc by Tiberiu Neamu
+					.cbp-item.print.motion
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project3.html', data-title='WhereTO App<br>by Tiberiu Neamu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/3.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title WhereTO App
+										.cbp-l-caption-desc by Tiberiu Neamu
+					.cbp-item.web-design.print
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project4.html', data-title='iDevices<br>by Tiberiu Neamu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/11.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title iDevices
+										.cbp-l-caption-desc by Tiberiu Neamu
+					.cbp-item.motion
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project5.html', data-title='Seemple* Music for iPad<br>by Tiberiu Neamu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/5.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title Seemple* Music for iPad
+										.cbp-l-caption-desc by Tiberiu Neamu
+					.cbp-item.print.motion
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project6.html', data-title='Remind~Me Widget<br>by Tiberiu Neamu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/6.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title Remind~Me Widget
+										.cbp-l-caption-desc by Tiberiu Neamu
+					.cbp-item.web-design.print
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project7.html', data-title='Workout Buddy<br>by Tiberiu Neamu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/7.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title Workout Buddy
+										.cbp-l-caption-desc by Tiberiu Neamu
+					.cbp-item.print
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project8.html', data-title='Digital Menu<br>by Cosmin Capitanu')
+							.cbp-caption-defaultWrap
+								img(src='images/portfolio/8.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title Digital Menu
+										.cbp-l-caption-desc by Cosmin Capitanu
+					.cbp-item.motion
+						a.cbp-caption.cbp-singlePageInline(href='ajax/project9.html', data-title='Holiday Selector<br>by Cosmin Capitanu')
+							.cbp-caption-defaultWrap
+								img(src='4.jpg', alt='')
+							.cbp-caption-activeWrap
+								.cbp-l-caption-alignLeft
+									.cbp-l-caption-body
+										.cbp-l-caption-title Holiday Selector
+										.cbp-l-caption-desc by Cosmin Capitanu
+				.cbp-l-loadMore-button
+					a.cbp-l-loadMore-button-link(href='ajax/loadMore.html') LOAD MORE
+
+		.clients-section.parallaxBg
+			.container
+				.title-v1
+					h2 Our Clients
+				
+				ul.owl-clients-v2
+					li.item
+						a(href='#')
+							img(src='/images/clients/national-geographic.png', alt='')
+					li.item
+						a(href='#')
+							img(src='/images/clients/inspiring.png', alt='')
+					li.item
+						a(href='#')
+							img(src='/images/clients/fred-perry.png', alt='')
+					li.item
+						a(href='#')
+							img(src='/images/clients/emirates.png', alt='')
+					li.item
+						a(href='#')
+							img(src='/images/clients/baderbrau.png', alt='')
+					li.item
+						a(href='#')
+							img(src='/images/clients/inspiring.png', alt='')
+		.testimonials-v3
+			.container
+				.row
+					.col-md-8.col-md-offset-2
+						ul.list-unstyled.owl-ts-v1
+							li.item
+								img.rounded-x.img-bordered(src='images/team/img3-sm.jpg', alt='')
+								.testimonials-v3-title
+									p David Case
+									span Web Developer, Google
+								p
+									| I just wanted to tell you how much I like to use #{companyName} - 
+									strong it's so sleek and elegant!
+									br
+									|                                 The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going!
+								p
+							li.item
+								img.rounded-x.img-bordered(src='images/team/img2-sm.jpg', alt='')
+								.testimonials-v3-title
+									p Tina Krueger
+									span UI Designer, Apple
+								p
+									| Keep up the great work. Your template is by far the best on the market in terms of features, quality and value or money.
+							li.item
+								img.rounded-x.img-bordered(src='images/team/img1-sm.jpg', alt='')
+								.testimonials-v3-title
+									p John Clarck
+									span Marketing & Consulting, IBM
+								p
+									| So far I really like the theme. I am looking forward to exploring more of your themes. Thank you!

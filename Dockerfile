@@ -1,47 +1,66 @@
-FROM ubuntu:14.04
+FROM node:4.8.2-alpine
+MAINTAINER Charles Berman <charles.heath.berman@gmail.com>
 
-MAINTAINER Stephen Pope, spope@projectricochet.com
+ENV BUILD_PACKAGES="python make gcc g++ git libuv bash curl tar bzip2" \
+    NODE_ENV=production \
+    ROOT_URL=http://localhost:3000 \
+    PORT=3000
 
-RUN mkdir /home/meteorapp
+WORKDIR /root/app/bundle
 
-WORKDIR /home/meteorapp
+ADD todos.tar.gz /root/app
+RUN apk --update add ${BUILD_PACKAGES} \
+    && (cd programs/server/ && npm install --unsafe-perm) \
+    && apk --update del ${BUILD_PACKAGES}
 
-ADD . ./meteorapp
+EXPOSE 3000
+CMD node main.js
 
-# Do basic updates
-RUN apt-get update -q && apt-get clean
 
-# Get curl in order to download curl
-RUN apt-get install curl -y \
+# FROM ubuntu:14.04
 
-  # Install Meteor
-  && (curl https://install.meteor.com/ | sh) \
+# MAINTAINER Stephen Pope, spope@projectricochet.com
 
-  # Build the Meteor app
-  && cd /home/meteorapp/meteorapp/app \
-  && meteor build ../build --directory \
+# RUN mkdir /home/meteorapp
 
-  # Install the version of Node.js we need.
+# WORKDIR /home/meteorapp
 
-  && cd /home/mookie/Programming/nerd-solutions/build/bundle \
-  && bash -c 'curl "https://nodejs.org/dist/$(<.node_version.txt)/node-$(<.node_version.txt)-linux-x64.tar.gz" > /home/meteorapp/meteorapp/build/required-node-linux-x64.tar.gz' \
-  && cd /usr/local && tar --strip-components 1 -xzf /home/mookie/Programming/nerd-solutions/build/required-node-linux-x64.tar.gz \
-  && rm /home/mookie/Programming/nerd-solutions/build/required-node-linux-x64.tar.gz \
+# ADD . ./meteorapp
 
-  # Build the NPM packages needed for build
-  && cd /home/mookie/Programming/nerd-solutions/build/bundle/programs/server \
-  && npm install \
+# # Do basic updates
+# RUN apt-get update -q && apt-get clean
 
-  # Get rid of Meteor. We're done with it.
-  && rm /usr/local/bin/meteor \
-  && rm -rf ~/.meteor \
+# # Get curl in order to download curl
+# RUN apt-get install curl -y \
 
-  #no longer need curl
-  && apt-get --purge autoremove curl -y
+#   # Install Meteor
+#   && (curl https://install.meteor.com/ | sh) \
 
-RUN npm install -g forever
+#   # Build the Meteor app
+#   && cd /home/meteorapp/meteorapp/app \
+#   && meteor build ../build --directory \
 
-EXPOSE 80
-ENV PORT 80
+#   # Install the version of Node.js we need.
 
-CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
+#   && cd /home/mookie/Programming/nerd-solutions/build/bundle \
+#   && bash -c 'curl "https://nodejs.org/dist/$(<.node_version.txt)/node-$(<.node_version.txt)-linux-x64.tar.gz" > /home/meteorapp/meteorapp/build/required-node-linux-x64.tar.gz' \
+#   && cd /usr/local && tar --strip-components 1 -xzf /home/mookie/Programming/nerd-solutions/build/required-node-linux-x64.tar.gz \
+#   && rm /home/mookie/Programming/nerd-solutions/build/required-node-linux-x64.tar.gz \
+
+#   # Build the NPM packages needed for build
+#   && cd /home/mookie/Programming/nerd-solutions/build/bundle/programs/server \
+#   && npm install \
+
+#   # Get rid of Meteor. We're done with it.
+#   && rm /usr/local/bin/meteor \
+#   && rm -rf ~/.meteor \
+
+#   #no longer need curl
+#   && apt-get --purge autoremove curl -y
+
+# RUN npm install -g forever
+
+# EXPOSE 80
+# ENV PORT 80
+
+# CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]

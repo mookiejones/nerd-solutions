@@ -1,5 +1,5 @@
 FROM node:4.8.2-alpine
-MAINTAINER Charles Berman <charles.heath.berman@gmail.com>
+LABEL Charles Berman <charles.heath.berman@gmail.com>
 
 ENV BUILD_PACKAGES="python make gcc g++ git libuv bash curl tar bzip2" \
     NODE_ENV=production \
